@@ -8,14 +8,19 @@ public class UserRegistrationTest{
     @Test
     public void givenFirstName_WhenProper_ReturnTrue() {
 
-        Boolean result = registration.validateFirstName("Jitesh");
+        Boolean result = registration.validateName("Jitesh");
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenFirstName_WhenNotProper_ReturnFalse() {
 
-        Boolean result= registration.validateFirstName("ji");
+        Boolean result= registration.validateName("ji");
         Assert.assertEquals(false,result);
+    }
+
+    @Test
+    public void lastName_WhenProper_ReturnTrue() {
+        Boolean result =registration.validateName();
     }
 }
