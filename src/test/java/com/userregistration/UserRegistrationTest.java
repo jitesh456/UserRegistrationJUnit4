@@ -67,4 +67,16 @@ public class UserRegistrationTest{
         Assert.assertEquals(false,result);
 
     }
+
+    @Test
+    public void givenPasswordWithUpperCase_WhenProper_ReturnTrue() {
+        Boolean result = registration.validatePasswordForUpper("UpperCase");
+        Assert.assertEquals(true,result);
+    }
+
+    @Test
+    public void givenPasswordWithUpperCase_WhenNotProper_ReturnFalse() {
+        Boolean result = registration.validatePasswordForUpper("lowercase");
+        Assert.assertEquals(false,result);
+    }
 }
