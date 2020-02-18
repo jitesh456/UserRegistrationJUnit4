@@ -92,4 +92,16 @@ public class UserRegistrationTest{
         Boolean result = registration.validatePasswordForNumber("Bhuvandas");
         Assert.assertEquals(false,result);
     }
+
+    @Test
+    public void givenPasswordWithSpecialCharacter_WhenProper_Returntrue() {
+        Boolean result = registration.validatePasswordSpecialCharacter("Bhuvhan@1");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPasswordWithSpecialCharacter_WhenNotProper_returnFalse()
+    {
+        Boolean result = registration.validatePasswordSpecialCharacter("Bhuvhan12");
+        Assert.assertEquals(false,result);
+    }
 }
