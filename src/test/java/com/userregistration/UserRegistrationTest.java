@@ -79,4 +79,17 @@ public class UserRegistrationTest{
         Boolean result = registration.validatePasswordForUpper("lowercase");
         Assert.assertEquals(false,result);
     }
+
+    @Test
+    public void givenPasswordWithNumber_WhenProper_ReturnTrue() {
+        Boolean result = registration.validatePasswordForNumber("Bhuvan123");
+        Assert.assertEquals(true,result);
+
+    }
+
+    @Test
+    public void givenPasswordWithNumber_WhenNotProper_ReturnFalse() {
+        Boolean result = registration.validatePasswordForNumber("Bhuvandas");
+        Assert.assertEquals(false,result);
+    }
 }
