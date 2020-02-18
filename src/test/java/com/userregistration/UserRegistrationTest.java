@@ -30,4 +30,15 @@ public class UserRegistrationTest{
         Boolean result = registration.validateName("sh1");
         Assert.assertEquals(false,result);
     }
+
+    @Test
+    public void givenEmail_WhenProper_ReturnTrue() {
+        Boolean result = registration.validateEmail("rahul@yahoo.com");
+        Assert.assertEquals(true,result);
+    }
+    public void givenEmail_WhenNotProper_ReturnFalse()
+    {
+        Boolean result = registration.validateEmail("rahu@.com");
+        Assert.assertEquals(false,result);
+    }
 }
