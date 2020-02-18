@@ -6,7 +6,8 @@ public class UserRegistration {
     String validateNo="^[0-9]{1,3}[ ][0-9]{10}$";
     String validatePasswordMinmumCharacter="^[a-zA-Z]{8,}";
     String validatePasswordUpperCase="((?=.*[A-Z])(?=.*[a-z])).{8,}";
-    String validatePasswordDigit="((?=.*[A-Z])(?=.*[a-z]))(?=.*[0-9]).{8,}";
+    String validatePasswordDigit="((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])).{8,}";
+    String validatePasswordSpecial="((?=.*[A-Z])(?=.*[a-z])(?=.*[@#$!%].)(?=.*[0-9])).{8,}";
     public Boolean validateName(String name) {
         return name.matches(nameValidation);
     }
@@ -30,5 +31,9 @@ public class UserRegistration {
 
     public Boolean validatePasswordForNumber(String password) {
         return password.matches(validatePasswordDigit);
+    }
+
+    public Boolean validatePasswordSpecialCharacter(String password) {
+        return password.matches(validatePasswordSpecial);
     }
 }
