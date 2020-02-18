@@ -36,9 +36,21 @@ public class UserRegistrationTest{
         Boolean result = registration.validateEmail("rahul@yahoo.com");
         Assert.assertEquals(true,result);
     }
+    @Test
     public void givenEmail_WhenNotProper_ReturnFalse()
     {
-        Boolean result = registration.validateEmail("rahu@.com");
+        Boolean result = registration.validateEmail("jitesh@.com");
+        Assert.assertEquals(false,result);
+    }
+
+    @Test
+    public void givenPhoneNo_WhenProper_ReturnTrue() {
+        Boolean result = registration.validatePhoneNo("91 9981233571");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPhoneNo_WhenNotProper_ReturnFalse() {
+        Boolean result = registration.validatePhoneNo("998765479");
         Assert.assertEquals(false,result);
     }
 }
