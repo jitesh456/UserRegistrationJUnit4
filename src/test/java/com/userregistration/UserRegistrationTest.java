@@ -1,5 +1,6 @@
 package com.userregistration;
 
+import jdk.internal.jline.internal.TestAccessible;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -52,5 +53,18 @@ public class UserRegistrationTest{
     public void givenPhoneNo_WhenNotProper_ReturnFalse() {
         Boolean result = registration.validatePhoneNo("998765479");
         Assert.assertEquals(false,result);
+    }
+    @Test
+    public void givePassword_WhenProper_ReturnTrue()
+    {
+        Boolean result = registration.validatePassword("jambojamb");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenPassword_WhenNotProper_ReturnFalse()
+    {
+        Boolean result = registration.validatePassword("jambo");
+        Assert.assertEquals(false,result);
+
     }
 }
